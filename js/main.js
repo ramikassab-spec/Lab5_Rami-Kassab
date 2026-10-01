@@ -1,7 +1,7 @@
 "use strict";
 /*
  * Laboration 5 - Studentkortsgenerator
- * Namn: DITT NAMN
+ * Namn: Rami Kassab
  */
 
 // Hämta element från DOM
@@ -33,6 +33,17 @@ let history = [];
  * @returns {boolean}
  */
 function validateForm() {
+    errors = []; // Rensa tidigare fel
+    if (fullnameInput.value.trim() === "") {
+        errors.push("Namn är obligatoriskt.");
+    }
+    if (emailInput.value.trim() === "") {
+        errors.push("E-post är obligatoriskt.");
+    }
+    if (phoneInput.value.trim() === "") {
+        errors.push("Telefon är obligatoriskt.");
+    }
+
     // Kontrollera formulärets obligatoriska fält
 
     // Visa eventuella felmeddelanden

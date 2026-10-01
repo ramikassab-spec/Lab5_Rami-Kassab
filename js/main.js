@@ -33,7 +33,7 @@ let history = [];
  * @returns {boolean}
  */
 function validateForm() {
-    errors = []; // Rensa tidigare fel
+    errors = [];
     if (fullnameInput.value.trim() === "") {
         errors.push("Namn är obligatoriskt.");
     }
@@ -56,6 +56,12 @@ function validateForm() {
  * Visar felmeddelanden på sidan.
  */
 function displayErrors() {
+    errorList.innerHTML = "";
+    for (let: i = 0; i < errors.length; i++) {
+        const li = document.createElement("li");
+        li.textContent = errors[i];
+        errorList.appendChild(li);
+    }
     // Rensa tidigare felmeddelanden
 
     // Skriv ut aktuella felmeddelanden till DOM

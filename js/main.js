@@ -43,6 +43,8 @@ function validateForm() {
     if (phoneInput.value.trim() === "") {
         errors.push("Telefon är obligatoriskt.");
     }
+    displayErrors();
+    return errors.length === 0;
 
     // Kontrollera formulärets obligatoriska fält
 
@@ -57,7 +59,7 @@ function validateForm() {
  */
 function displayErrors() {
     errorList.innerHTML = "";
-    for (let: i = 0; i < errors.length; i++) {
+    for (let i = 0; i < errors.length; i++) {
         const li = document.createElement("li");
         li.textContent = errors[i];
         errorList.appendChild(li);
@@ -84,7 +86,15 @@ function createStudentCard() {
     previewFullname.style.fontFamily = font;
     previewEmail.style.fontFamily = font;
     previewPhone.style.fontFamily = font;
-    
+
+    const studentCard = {
+        fullname: fullname,
+        email: email,
+        phone: phone,
+        font: font
+    };
+
+    history.push(studentCard);
 
 
 

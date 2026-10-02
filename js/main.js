@@ -110,6 +110,8 @@ function createStudentCard() {
  * Sparar historiken i localStorage.
  */
 function saveHistory() {
+    const historyData = JSON.stringify(history);
+    localStorage.setItem("history", historyData);
     // Spara history i localStorage
 }
 
@@ -117,9 +119,14 @@ function saveHistory() {
 /**
  * Läser in tidigare historik från localStorage.
  */
-function loadHistory() {
-    // Hämta eventuell sparad historik
 
+    // Hämta eventuell sparad historik
+function loadHistory() {
+    const savedHistory = localStorage.getItem("history");
+    if (savedHistory) {
+        history = JSON.parse(savedHistory);
+    }
+  
     // Uppdatera history
 }
 

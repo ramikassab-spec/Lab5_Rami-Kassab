@@ -168,8 +168,14 @@ function renderHistory() {
  */
 function clearForm() {
     // Återställ formulär och studentkort
+    form.reset();
+    previewFullname.textContent = "";
+    previewEmail.textContent = "";
+    previewPhone.textContent = "";
 
     // Rensa eventuella felmeddelanden
+    errorList.innerHTML = "";
+
 }
 
 

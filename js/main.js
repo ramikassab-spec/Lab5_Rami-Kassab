@@ -204,9 +204,16 @@ form.addEventListener("submit", function (event) {
 
 
 // När användaren klickar på "Rensa"
-
+clearButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    clearForm();
+});
 
 // När användaren klickar på "Radera historik"
+deleteHistoryButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    deleteHistory();
+});
 
 
 // När sidan laddas:

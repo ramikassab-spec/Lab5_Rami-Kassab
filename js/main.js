@@ -136,8 +136,27 @@ function loadHistory() {
  */
 function renderHistory() {
     // Rensa tidigare visad historik
-
+   
     // Skriv ut innehållet i history till DOM
+     historySection.innerHTML = "";
+    for (let i =  history.length -1; i >= 0; i--) {
+        const card = document.createElement("div");
+        const student = history[i];
+
+        const name = document.createElement("p");
+        name.textContent = student.fullname;
+        card.appendChild(name);
+
+        const email = document.createElement("p");
+        email.textContent = student.email;
+        card.appendChild(email);
+
+        const phone = document.createElement("p");
+        phone.textContent = student.phone;
+        card.appendChild(phone);
+
+        historySection.appendChild(card);
+    }
 }
 
 

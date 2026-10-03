@@ -197,7 +197,7 @@ form.addEventListener("submit", function (event) {
     if (validateForm()) {
         createStudentCard();
     }
-}
+});
 // När formuläret skickas:
 // - validera inmatningen
 // - skapa studentkort om valideringen lyckas
@@ -221,4 +221,4 @@ deleteHistoryButton.addEventListener("click", function (event) {
 window.addEventListener("load", function () {
     loadHistory();
     renderHistory();
-}
+});
